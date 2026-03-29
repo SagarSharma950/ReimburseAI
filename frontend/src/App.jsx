@@ -1,19 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import ManagerPortal from "./components/managerPortal";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [requests, setRequests] = useState([
+    {
+      amount: "850",
+      vendor: "Dominos",
+      category: "Food",
+      employee: "Aakash",
+      status: "Pending",
+    },
+    {
+      amount: "2200",
+      vendor: "Uber",
+      category: "Travel",
+      employee: "Mehek",
+      status: "Pending",
+    },
+    {
+      amount: "500",
+      vendor: "Starbucks",
+      category: "Food",
+      employee: "Sagar",
+      finalStatus: "Approved",
+    },
+    {
+      amount: "1800",
+      vendor: "Unknown",
+      category: "Misc",
+      employee: "Aashi",
+      finalStatus: "Rejected",
+    },
+  ]);
 
   return (
-    <>
-      <h1 className='text-xl'>
-       Hello 
-      </h1>
-    </>
-  )
+    <ManagerPortal
+      requests={requests}
+      setRequests={setRequests}
+    />
+  );
 }
 
-export default App
+export default App;
